@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import Modal from "./Modal";
+import Post from "./Post";
 
 function App() {
   let [logo, setLogo] = useState("BLOG REACT");
@@ -8,21 +10,16 @@ function App() {
     "POST TITLE2",
     "POST TITLE3",
   ]);
-  let [like, setLike] = useState(0);
 
-  function likeClick() {
-    setLike(like + 1);
-  }
+  // function postSort() {
+  //   console.log(title.sort());
+  // }
 
-  function postSort() {
-    console.log(title.sort());
-  }
-
-  function titleChange() {
-    let temp_title = [...title];
-    temp_title[0] = "TITLE CHANGE COMPLATE";
-    setTitle(temp_title);
-  }
+  // function titleChange() {
+  //   let temp_title = [...title];
+  //   temp_title[0] = "TITLE CHANGE COMPLATE";
+  //   setTitle(temp_title);
+  // }
 
   return (
     <div className="App">
@@ -30,24 +27,15 @@ function App() {
         <h4>{logo}</h4>
       </div>
       <div className="post-list">
+        {/*
         <button onClick={postSort}>sort</button>
-        <div className="post">
-          <h4>
-            {title[0]}&nbsp;
-            <span onClick={likeClick}>👍&nbsp;</span>
-            {like}
-          </h4>
-          <button onClick={titleChange}>TITLE CAHNGE</button>
-          <p>register date</p>
-        </div>
-        <div className="post">
-          <h4>{title[1]}</h4>
-          <p>register date</p>
-        </div>
-        <div className="post">
-          <h4>{title[2]}</h4>
-          <p>register date</p>
-        </div>
+        <button onClick={titleChange}>TITLE CAHNGE</button>
+        */}
+
+        <Post title={title[0]} />
+        <Post title={title[1]} />
+        <Post title={title[2]} />
+        <Modal />
       </div>
     </div>
   );
