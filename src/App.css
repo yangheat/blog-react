@@ -14,9 +14,11 @@ div {
   box-sizing: border-box;
 }
 
-.post {
-  padding-left: 20px;
+.post-list {
   text-align: left;
+  padding-left: 20px;
+}
+.post {
   border-bottom: 1px solid gray;
 }
 

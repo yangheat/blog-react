@@ -14,8 +14,14 @@ function App() {
     setLike(like + 1);
   }
 
+  function postSort() {
+    console.log(title.sort());
+  }
+
   function titleChange() {
-    setTitle(["POST TITLE CHANGE", title[1], title[2]]);
+    let temp_title = [...title];
+    temp_title[0] = "TITLE CHANGE COMPLATE";
+    setTitle(temp_title);
   }
 
   return (
@@ -24,6 +30,7 @@ function App() {
         <h4>{logo}</h4>
       </div>
       <div className="post-list">
+        <button onClick={postSort}>sort</button>
         <div className="post">
           <h4>
             {title[0]}&nbsp;
